@@ -12,10 +12,7 @@ function App() {
   const envoyerMessage = async () => {
     setLoading(true);
     try {
-      const res = await axios.post(
-  'https://reacto-backend.onrender.com/api/chat',
-  { message: input }
-);
+      const res = await axios.post('/api/chat', { message: input });
       setReponse(res.data.response);
     } catch (error) {
       setReponse("Erreur lors de l'appel à l'API.");
